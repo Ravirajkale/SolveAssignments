@@ -1,0 +1,14 @@
+C:\Users\rkale\source\repos\BasicOOPSsys\Linq_Practice\bin\Debug\net8.0\Linq_Practice.exe
+C:\Users\rkale\source\repos\BasicOOPSsys\Linq_Practice\bin\Debug\net8.0\Linq_Practice.deps.json
+C:\Users\rkale\source\repos\BasicOOPSsys\Linq_Practice\bin\Debug\net8.0\Linq_Practice.runtimeconfig.json
+C:\Users\rkale\source\repos\BasicOOPSsys\Linq_Practice\bin\Debug\net8.0\Linq_Practice.dll
+C:\Users\rkale\source\repos\BasicOOPSsys\Linq_Practice\bin\Debug\net8.0\Linq_Practice.pdb
+C:\Users\rkale\source\repos\BasicOOPSsys\Linq_Practice\obj\Debug\net8.0\Linq_Practice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rkale\source\repos\BasicOOPSsys\Linq_Practice\obj\Debug\net8.0\Linq_Practice.AssemblyInfoInputs.cache
+C:\Users\rkale\source\repos\BasicOOPSsys\Linq_Practice\obj\Debug\net8.0\Linq_Practice.AssemblyInfo.cs
+C:\Users\rkale\source\repos\BasicOOPSsys\Linq_Practice\obj\Debug\net8.0\Linq_Practice.csproj.CoreCompileInputs.cache
+C:\Users\rkale\source\repos\BasicOOPSsys\Linq_Practice\obj\Debug\net8.0\Linq_Practice.dll
+C:\Users\rkale\source\repos\BasicOOPSsys\Linq_Practice\obj\Debug\net8.0\refint\Linq_Practice.dll
+C:\Users\rkale\source\repos\BasicOOPSsys\Linq_Practice\obj\Debug\net8.0\Linq_Practice.pdb
+C:\Users\rkale\source\repos\BasicOOPSsys\Linq_Practice\obj\Debug\net8.0\Linq_Practice.genruntimeconfig.cache
+C:\Users\rkale\source\repos\BasicOOPSsys\Linq_Practice\obj\Debug\net8.0\ref\Linq_Practice.dll

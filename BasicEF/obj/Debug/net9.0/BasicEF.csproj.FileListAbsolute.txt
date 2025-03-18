@@ -1,0 +1,7 @@
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicEF\obj\Debug\net9.0\BasicEF.csproj.AssemblyReference.cache
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicEF\obj\Debug\net9.0\BasicEF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicEF\obj\Debug\net9.0\BasicEF.AssemblyInfoInputs.cache
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicEF\obj\Debug\net9.0\BasicEF.AssemblyInfo.cs
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicEF\obj\Debug\net9.0\BasicEF.csproj.CoreCompileInputs.cache
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicEF\obj\Debug\net9.0\BasicEF.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicEF\obj\Debug\net9.0\BasicEF.MvcApplicationPartsAssemblyInfo.cache

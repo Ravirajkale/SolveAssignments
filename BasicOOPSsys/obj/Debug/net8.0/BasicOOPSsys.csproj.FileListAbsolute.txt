@@ -1,0 +1,14 @@
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicOOPSsys\bin\Debug\net8.0\BasicOOPSsys.exe
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicOOPSsys\bin\Debug\net8.0\BasicOOPSsys.deps.json
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicOOPSsys\bin\Debug\net8.0\BasicOOPSsys.runtimeconfig.json
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicOOPSsys\bin\Debug\net8.0\BasicOOPSsys.dll
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicOOPSsys\bin\Debug\net8.0\BasicOOPSsys.pdb
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicOOPSsys\obj\Debug\net8.0\BasicOOPSsys.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicOOPSsys\obj\Debug\net8.0\BasicOOPSsys.AssemblyInfoInputs.cache
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicOOPSsys\obj\Debug\net8.0\BasicOOPSsys.AssemblyInfo.cs
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicOOPSsys\obj\Debug\net8.0\BasicOOPSsys.csproj.CoreCompileInputs.cache
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicOOPSsys\obj\Debug\net8.0\BasicOOPSsys.dll
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicOOPSsys\obj\Debug\net8.0\refint\BasicOOPSsys.dll
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicOOPSsys\obj\Debug\net8.0\BasicOOPSsys.pdb
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicOOPSsys\obj\Debug\net8.0\BasicOOPSsys.genruntimeconfig.cache
+C:\Users\rkale\source\repos\BasicOOPSsys\BasicOOPSsys\obj\Debug\net8.0\ref\BasicOOPSsys.dll
