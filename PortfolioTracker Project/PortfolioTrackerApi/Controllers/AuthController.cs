@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PortfolioTrackerApi.DTOS;
 using PortfolioTrackerApi.Services;
 
 namespace PortfolioTrackerApi.Controllers
 {
+   
     [Route("api/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
@@ -28,7 +30,7 @@ namespace PortfolioTrackerApi.Controllers
 
             if (result != null)
             {
-                return Ok(result); // Return the JWT token
+                return Ok(new { Message = "Registration successful. Please log in." }); 
             }
 
             return BadRequest("Registration failed."); // Or a more descriptive error

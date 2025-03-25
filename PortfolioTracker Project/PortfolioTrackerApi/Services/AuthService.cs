@@ -55,7 +55,7 @@ namespace PortfolioTrackerApi.Services
             {
                 // Generate a JWT token for the logged-in user
                 string token = GenerateJwtToken(user);
-                return new AuthResponseDto { Token = token };
+                return new AuthResponseDto { Token = token, FirstName = user.FirstName };
             }
 
             // Login failed

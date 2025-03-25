@@ -11,7 +11,6 @@ C:\Users\rkale\source\repos\BasicOOPSsys\PortfolioTrackerApi\bin\Debug\net8.0\Az
 C:\Users\rkale\source\repos\BasicOOPSsys\PortfolioTrackerApi\bin\Debug\net8.0\Humanizer.dll
 C:\Users\rkale\source\repos\BasicOOPSsys\PortfolioTrackerApi\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\rkale\source\repos\BasicOOPSsys\PortfolioTrackerApi\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\rkale\source\repos\BasicOOPSsys\PortfolioTrackerApi\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
 C:\Users\rkale\source\repos\BasicOOPSsys\PortfolioTrackerApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 C:\Users\rkale\source\repos\BasicOOPSsys\PortfolioTrackerApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\rkale\source\repos\BasicOOPSsys\PortfolioTrackerApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
@@ -143,3 +142,5 @@ C:\Users\rkale\source\repos\BasicOOPSsys\PortfolioTrackerApi\obj\Debug\net8.0\Po
 C:\Users\rkale\source\repos\BasicOOPSsys\PortfolioTrackerApi\obj\Debug\net8.0\PortfolioTrackerApi.genruntimeconfig.cache
 C:\Users\rkale\source\repos\BasicOOPSsys\PortfolioTrackerApi\obj\Debug\net8.0\ref\PortfolioTrackerApi.dll
 C:\Users\rkale\source\repos\BasicOOPSsys\PortfolioTrackerApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\rkale\source\repos\BasicOOPSsys\PortfolioTrackerApi\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\rkale\source\repos\BasicOOPSsys\PortfolioTrackerApi\bin\Debug\net8.0\Microsoft.Extensions.Options.dll

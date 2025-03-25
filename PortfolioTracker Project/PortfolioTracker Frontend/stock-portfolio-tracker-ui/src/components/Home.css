@@ -1,0 +1,62 @@
+.home-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.home-container h2 {
+    margin-bottom: 20px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust minmax for card size */
+    gap: 20px;
+    display: flex;
+    justify-content: center; /* Center cards horizontally */
+    margin-bottom: 20px;
+}
+
+.add-portfolio-link {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination-button {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-button:hover {
+    background-color: #0056b3;
+}
+
+.pagination-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.createPortfolioButton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}

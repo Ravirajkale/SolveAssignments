@@ -32,6 +32,53 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PortfolioTrackerApi.Controllers.PortfoliosController",
+    "Method": "GetPortfolios",
+    "RelativePath": "api/Portfolios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PortfolioTrackerApi.DTOS.PortfolioResponseDto, PortfolioTrackerApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PortfolioTrackerApi.Controllers.PortfoliosController",
+    "Method": "CreatePortfolio",
+    "RelativePath": "api/Portfolios",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PortfolioRequest",
+        "Type": "PortfolioTrackerApi.DTOS.PortfolioRequestDtocs",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PortfolioTrackerApi.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make body take up full viewport height */
+    width: 100vw;  /* Take up full viewport width */
+}
+.login-container {
+   
+    display: flex;              /* Use Flexbox */
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically */
+       /* Fill the entire viewport height */
+    background-color: #f0f2f5; /* Optional: Set a background color */
+}
+
+.login-card {
+    background-color: #ffffff;
+    padding-left: 20%;
+    padding-right: 20%;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 70%; /* Adjust width as needed */
+    text-align: center;
+}
+
+.login-card h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.login-input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Make sure padding doesn't affect width */
+}
+
+.login-button {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+    transition: background-color 0.2s;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: #dc3545;
+    margin-bottom: 1rem;
+}
