@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Login from './components/Login';
 import Register from './components/Register';
 import Home from './components/Home';
+import PortfolioStocks from './components/PortfolioStocks';
+import AddStocks from './components/AddStocks';
 import { AuthProvider, useAuth } from './AuthContext';
 import { ToastContainer } from 'react-toastify'; // Import ToastContainer
 import 'react-toastify/dist/ReactToastify.css'; // Import CSS
@@ -17,6 +19,16 @@ function App() {
                     <Route path="/home" element={
                         <PrivateRoute>
                             <Home />
+                        </PrivateRoute>
+                    } />
+                     <Route path="/portfolio/:portfolioId/stocks" element={
+                        <PrivateRoute>
+                            <PortfolioStocks />
+                        </PrivateRoute>
+                    } />
+                    <Route path="/portfolio/:portfolioId/addstocks" element={
+                        <PrivateRoute>
+                            <AddStocks />
                         </PrivateRoute>
                     } />
                     <Route path="*" element={<Navigate to="/login" />} />

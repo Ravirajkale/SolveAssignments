@@ -1,0 +1,109 @@
+.portfolio-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.portfolio-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add-stock-btn,
+.statistics-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.statistics-btn {
+    background-color: #4a4a4a;
+}
+
+.add-stock-btn:hover {
+    background-color: #0056b3;
+}
+
+.statistics-btn:hover {
+    background-color: #333;
+}
+
+.loading-text,
+.error-text,
+.no-stocks-text {
+    text-align: center;
+    font-size: 16px;
+    color: gray;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.stocks-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    width: 95%;
+    justify-content: center; /* Center items when fewer stocks remain */
+}
+
+.stock-card {
+    flex: 1 1 calc(50% - 10px); /* Each card takes 50% width with a gap */
+    min-width: 250px; /* Ensures a minimum size */
+    max-width: 300px; /* Prevents stretching too much */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.stock-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.stock-price,
+.stock-quantity,
+.stock-purchaseValue {
+    font-size: 14px;
+    color: #555;
+}
+
+.stock-currentPrice{
+    color: #007bff;
+}
+.stock-currentValue {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Conditional Styling */
+.profit {
+    color: green;
+}
+
+.loss {
+    color: red;
+}

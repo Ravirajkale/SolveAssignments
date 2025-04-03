@@ -10,6 +10,8 @@ namespace PortfolioTrackerApi.DAL
 
         public DbSet<Portfolio> Portfolios { get; set; }
         public DbSet<Stock> Stocks { get; set; }
+
+        public DbSet<StockPrice> StocksPrice { get; set; }
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<HistoricalStockPrice> HistoricalStockPrices { get; set; } //Add the HistoricalStockPrice here.
 

@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
-import { getPortfolios } from '../services/portfolios';
+import { getPortfolios,createPortfolio } from '../services/portfolios';
 import './Home.css';
 import PortfolioCard from './PortfolioCard'; // Import the Card component
+import AddPortfolioModal from './AddPortfolioModal';
 
 function Home() {
     const [portfolios, setPortfolios] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [pageSize] = useState(10); // Display 10 portfolios per page
     const [totalCount, setTotalCount] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const { token } = useAuth();
 
     useEffect(() => {
@@ -34,12 +36,49 @@ function Home() {
         setCurrentPage(newPage);
     };
 
+    const handleAddPortfolioClick = () => {
+        setIsModalOpen(true); // Open the modal
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false); // Close the modal
+        //Set name back.
+    };
+
+    const handleAddPortfolio = async (portfolioName) => {
+        try {
+              //setMessage("Adding!");
+            const data = await createPortfolio( { name: portfolioName }, token); //Call to backend function.
+            console.log(data);
+            if (data.name==portfolioName && totalCount<pageSize)
+            {
+                 setTotalCount(prevCount => prevCount + 1);
+                 setPortfolios(prevPortfolios => [...prevPortfolios, { id: data.id, name: data.name}]);
+                   toast.success("Added Succesfully.");
+                   //add to current code
+
+            }
+            else if(data.name==portfolioName && totalCount>pageSize){
+                toast.success("Added Succesfully");
+            }
+            else{
+                throw console.error("data failed or not");
+            }
+               // setMessage("");
+        } catch (error) {
+            console.log("Error " + error);
+        }
+    };
+
     return (
         <div className="home-container">
             <h2>My Portfolios</h2>
-            <Link to="/AddPortfolio" className="add-portfolio-link">
-                <button className="createPortfolioButton">Create Portfolio</button>
-            </Link>
+            <button className = "createPortfolioButton" onClick={handleAddPortfolioClick}>Create Portfolio</button>
+            <AddPortfolioModal
+                isOpen={isModalOpen}
+                onClose={handleCloseModal}
+                onAdd={handleAddPortfolio}
+            />
             <div className="portfolio-grid">
                 {totalCount === 0 ? (
                     <p>You don't have any portfolios yet. Add one to get started!</p>

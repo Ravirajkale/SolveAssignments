@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\WebsocketBackend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A86B490C-813D-4636-8504-5D514DDC4DAA}|WebsocketBackend\\WebsocketBackend.csproj|c:\\users\\rkale\\desktop\\solve assignments\\web socket demo\\backend\\websocketbackend\\websocketbackend\\services\\websockethandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A86B490C-813D-4636-8504-5D514DDC4DAA}|WebsocketBackend\\WebsocketBackend.csproj|solutionrelative:websocketbackend\\services\\websockethandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A86B490C-813D-4636-8504-5D514DDC4DAA}|WebsocketBackend\\WebsocketBackend.csproj|c:\\users\\rkale\\desktop\\solve assignments\\web socket demo\\backend\\websocketbackend\\websocketbackend\\services\\countupdaterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A86B490C-813D-4636-8504-5D514DDC4DAA}|WebsocketBackend\\WebsocketBackend.csproj|solutionrelative:websocketbackend\\services\\countupdaterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A86B490C-813D-4636-8504-5D514DDC4DAA}|WebsocketBackend\\WebsocketBackend.csproj|c:\\users\\rkale\\desktop\\solve assignments\\web socket demo\\backend\\websocketbackend\\websocketbackend\\controllers\\membercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A86B490C-813D-4636-8504-5D514DDC4DAA}|WebsocketBackend\\WebsocketBackend.csproj|solutionrelative:websocketbackend\\controllers\\membercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A86B490C-813D-4636-8504-5D514DDC4DAA}|WebsocketBackend\\WebsocketBackend.csproj|c:\\users\\rkale\\desktop\\solve assignments\\web socket demo\\backend\\websocketbackend\\websocketbackend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A86B490C-813D-4636-8504-5D514DDC4DAA}|WebsocketBackend\\WebsocketBackend.csproj|solutionrelative:websocketbackend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A86B490C-813D-4636-8504-5D514DDC4DAA}|WebsocketBackend\\WebsocketBackend.csproj|c:\\users\\rkale\\desktop\\solve assignments\\web socket demo\\backend\\websocketbackend\\websocketbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A86B490C-813D-4636-8504-5D514DDC4DAA}|WebsocketBackend\\WebsocketBackend.csproj|solutionrelative:websocketbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MemberController.cs",
+              "DocumentMoniker": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\WebsocketBackend\\WebsocketBackend\\Controllers\\MemberController.cs",
+              "RelativeDocumentMoniker": "WebsocketBackend\\Controllers\\MemberController.cs",
+              "ToolTip": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\WebsocketBackend\\WebsocketBackend\\Controllers\\MemberController.cs",
+              "RelativeToolTip": "WebsocketBackend\\Controllers\\MemberController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwBoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T05:38:35.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\WebsocketBackend\\WebsocketBackend\\Program.cs",
+              "RelativeDocumentMoniker": "WebsocketBackend\\Program.cs",
+              "ToolTip": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\WebsocketBackend\\WebsocketBackend\\Program.cs",
+              "RelativeToolTip": "WebsocketBackend\\Program.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAiwCsAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T05:33:04.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CountUpdaterService.cs",
+              "DocumentMoniker": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\WebsocketBackend\\WebsocketBackend\\services\\CountUpdaterService.cs",
+              "RelativeDocumentMoniker": "WebsocketBackend\\services\\CountUpdaterService.cs",
+              "ToolTip": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\WebsocketBackend\\WebsocketBackend\\services\\CountUpdaterService.cs",
+              "RelativeToolTip": "WebsocketBackend\\services\\CountUpdaterService.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAzwB8AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T05:31:37.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WebSocketHandler.cs",
+              "DocumentMoniker": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\WebsocketBackend\\WebsocketBackend\\services\\WebSocketHandler.cs",
+              "RelativeDocumentMoniker": "WebsocketBackend\\services\\WebSocketHandler.cs",
+              "ToolTip": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\WebsocketBackend\\WebsocketBackend\\services\\WebSocketHandler.cs",
+              "RelativeToolTip": "WebsocketBackend\\services\\WebSocketHandler.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAxwCsAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T05:26:21.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\WebsocketBackend\\WebsocketBackend\\data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "WebsocketBackend\\data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\WebsocketBackend\\WebsocketBackend\\data\\AppDbContext.cs",
+              "RelativeToolTip": "WebsocketBackend\\data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T05:23:44.361Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

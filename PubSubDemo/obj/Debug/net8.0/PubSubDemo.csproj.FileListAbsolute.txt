@@ -1,0 +1,14 @@
+C:\Users\rkale\source\repos\BasicOOPSsys\PubSubDemo\bin\Debug\net8.0\PubSubDemo.exe
+C:\Users\rkale\source\repos\BasicOOPSsys\PubSubDemo\bin\Debug\net8.0\PubSubDemo.deps.json
+C:\Users\rkale\source\repos\BasicOOPSsys\PubSubDemo\bin\Debug\net8.0\PubSubDemo.runtimeconfig.json
+C:\Users\rkale\source\repos\BasicOOPSsys\PubSubDemo\bin\Debug\net8.0\PubSubDemo.dll
+C:\Users\rkale\source\repos\BasicOOPSsys\PubSubDemo\bin\Debug\net8.0\PubSubDemo.pdb
+C:\Users\rkale\source\repos\BasicOOPSsys\PubSubDemo\obj\Debug\net8.0\PubSubDemo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rkale\source\repos\BasicOOPSsys\PubSubDemo\obj\Debug\net8.0\PubSubDemo.AssemblyInfoInputs.cache
+C:\Users\rkale\source\repos\BasicOOPSsys\PubSubDemo\obj\Debug\net8.0\PubSubDemo.AssemblyInfo.cs
+C:\Users\rkale\source\repos\BasicOOPSsys\PubSubDemo\obj\Debug\net8.0\PubSubDemo.csproj.CoreCompileInputs.cache
+C:\Users\rkale\source\repos\BasicOOPSsys\PubSubDemo\obj\Debug\net8.0\PubSubDemo.dll
+C:\Users\rkale\source\repos\BasicOOPSsys\PubSubDemo\obj\Debug\net8.0\refint\PubSubDemo.dll
+C:\Users\rkale\source\repos\BasicOOPSsys\PubSubDemo\obj\Debug\net8.0\PubSubDemo.pdb
+C:\Users\rkale\source\repos\BasicOOPSsys\PubSubDemo\obj\Debug\net8.0\PubSubDemo.genruntimeconfig.cache
+C:\Users\rkale\source\repos\BasicOOPSsys\PubSubDemo\obj\Debug\net8.0\ref\PubSubDemo.dll

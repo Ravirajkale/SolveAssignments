@@ -37,5 +37,15 @@ namespace PortfolioTrackerApi.Repositories
 
             return (portfolios, totalCount);
         }
+
+        public async Task<Portfolio> GetPortfolioByIdAsync(int portfolioId)
+        {
+            return await _context.Portfolios.FirstOrDefaultAsync(p => p.Id == portfolioId);
+        }
+
+        public async Task<Portfolio> GetPortfolioStocksAsync(int portfolioId)
+        {
+            return await _context.Portfolios.Include(p => p.Stocks).FirstOrDefaultAsync(p => p.Id == portfolioId);
+        }
     }
 }

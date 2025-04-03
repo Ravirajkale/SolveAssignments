@@ -5,13 +5,14 @@ import './PortfolioCard.css';
 function PortfolioCard({ portfolio }) {
     return (
         <Link
-            to={`/portfolio/${portfolio.id}`}
+            to={`/portfolio/${portfolio.id}/stocks`}
+            state={{ name: portfolio.name }}
             className="portfolio-card"
             style={{ textDecoration: 'none' }} // Remove underline
         >
             <div className="card-content">
                 <h3>{portfolio.name}</h3>
-                <p>Number of Stocks: {portfolio.StocksCount}</p> {/* Display the StockCount */}
+                <p>Number of Stocks: {portfolio.stocksCount}</p> {/* Display the StockCount */}
             </div>
         </Link>
     );

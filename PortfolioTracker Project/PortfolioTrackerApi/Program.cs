@@ -7,6 +7,7 @@ using PortfolioTrackerApi.DAL;
 using PortfolioTrackerApi.Entities;
 using PortfolioTrackerApi.Repositories;
 using PortfolioTrackerApi.Services;
+using StackExchange.Redis;
 using System;
 using System.Text;
 
@@ -47,9 +48,27 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IPortfolioRepository, PortfolioRepository>();
 builder.Services.AddScoped<IPortfolioService,PortfolioService>();
-
+builder.Services.AddHttpClient();
+builder.Services.AddScoped<IStocksRepository, StocksRepository>();
+builder.Services.AddScoped<StocksService>();
+//builder.Services.AddSingleton<IRedisService, RedisService>();
+//builder.Services.AddHostedService<StockPriceUpdaterService>();
+builder.Services.AddSingleton<WebSocketHandler>();
+builder.Services.AddHostedService<StockPriceGeneratorService>();
 #endregion
 
+
+#region Redis
+builder.Services.AddSingleton<IConnectionMultiplexer>(provider =>
+{
+    var config = ConfigurationOptions.Parse(builder.Configuration["Redis:ConnectionString"]);
+    config.ConnectTimeout = 15000; // Increase timeout to 15 sec
+    config.SyncTimeout = 15000;    // Increase sync timeout to 15 sec
+    config.AbortOnConnectFail = false; // Prevent failures on startup
+    return ConnectionMultiplexer.Connect(config);
+});
+builder.Services.AddSingleton<IRedisService, RedisService>();
+#endregion
 
 #region Adding Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -98,11 +117,33 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
 
+app.UseRouting();
+app.UseWebSockets();
 app.UseAuthentication();
 
 app.UseAuthorization();
 
 
 app.MapControllers();
+
+//Websocket route
+app.UseEndpoints(endpoints =>
+{
+    endpoints.Map("/ws/stocks", async context =>
+    {
+        if (context.WebSockets.IsWebSocketRequest)
+        {
+            var webSocket = await context.WebSockets.AcceptWebSocketAsync();
+            var handler = context.RequestServices.GetRequiredService<WebSocketHandler>();
+            await handler.HandleWebSocketAsync(context, webSocket);
+        }
+        else
+        {
+            context.Response.StatusCode = 400;
+        }
+    });
+
+    endpoints.MapControllers();
+});
 
 app.Run();

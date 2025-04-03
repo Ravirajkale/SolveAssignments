@@ -277,6 +277,33 @@ namespace PortfolioTrackerApi.Migrations
                     b.ToTable("Stocks");
                 });
 
+            modelBuilder.Entity("PortfolioTrackerApi.Entities.StockPrice", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Company")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("CurrentPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("LastUpdated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Ticker")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("StocksPrice");
+                });
+
             modelBuilder.Entity("PortfolioTrackerApi.Entities.User", b =>
                 {
                     b.Property<string>("Id")

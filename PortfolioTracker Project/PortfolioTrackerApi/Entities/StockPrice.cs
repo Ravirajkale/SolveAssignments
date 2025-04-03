@@ -9,6 +9,8 @@ namespace PortfolioTrackerApi.Entities
 
         [Required]
         public string Ticker { get; set; }
+        
+        public string Company { get; set; }
 
         public decimal CurrentPrice { get; set; }
 
