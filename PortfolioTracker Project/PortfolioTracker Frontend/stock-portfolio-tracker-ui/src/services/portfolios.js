@@ -30,3 +30,34 @@ export async function createPortfolio(body, token) {
         throw error; // Re-throw the error for the component to handle
     }
 }
+
+export const updateStockQuantity = async (stockId, newQuantity,token) => {
+    try {
+      const response = await axios.put(`${API_BASE_URL}/quantity`, {
+        stockId,
+        newQuantity,
+      }, {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    });
+      return response.data;
+    } catch (error) {
+      console.error("Error updating stock quantity:", error);
+      throw error;
+    }
+  };
+
+  export const deleteStock = async (stockId,token) => {
+    try {
+      const response = await axios.delete(`${API_BASE_URL}/${stockId}`, {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    });
+      return response.data;
+    } catch (error) {
+      console.error("Error deleting stock:", error);
+      throw error;
+    }
+  };

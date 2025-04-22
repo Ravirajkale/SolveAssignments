@@ -15,11 +15,12 @@ namespace PortfolioTrackerApi.Controllers
     {
         private readonly IStocksRepository _stockRepository;
         private readonly StocksService _stockService;
-
-        public StocksController(IStocksRepository stockRepository, StocksService stockService)
+        private readonly IRedisService redisService;
+        public StocksController(IStocksRepository stockRepository, StocksService stockService, IRedisService redisService)
         {
             _stockRepository = stockRepository;
             _stockService = stockService;
+            this.redisService = redisService;
         }
 
         [HttpGet("available")]
@@ -33,8 +34,34 @@ namespace PortfolioTrackerApi.Controllers
         public async Task<IActionResult> SearchStock(string ticker)
         {
             var stock = await _stockService.GetStockWithCacheAsync(ticker);
+            Console.WriteLine(ticker);
             if (stock == null) return NotFound("Stock not found.");
             return Ok(stock);
+        }
+
+        [HttpGet("search")]
+        public async Task<IActionResult> SearchStocks(string query)
+      {
+            if (string.IsNullOrWhiteSpace(query))
+                return BadRequest("Query cannot be empty.");
+
+            var matchingStocks = await _stockRepository.GetStocksStartingWith(query);
+
+            var result = new List<StockPriceDto>();
+
+            foreach (var stock in matchingStocks)
+            {
+                var priceInfo = await redisService.GetPriceAsync(stock.Ticker);
+                result.Add(new StockPriceDto
+                {
+                    Ticker = stock.Ticker,
+                    Company = stock.Name,
+                    CurrentPrice = priceInfo?.CurrentPrice ?? 0,
+                    LastUpdated = priceInfo?.LastUpdated ?? DateTime.UtcNow
+                });
+            }
+          
+            return Ok(result);
         }
 
         [HttpGet("{portfolioId}/stocks")]
@@ -47,7 +74,7 @@ namespace PortfolioTrackerApi.Controllers
             }
             catch (Exception ex)
             {
-                return NotFound(new { message = ex.Message });
+                return Empty;
             }
         }
 
@@ -66,6 +93,8 @@ namespace PortfolioTrackerApi.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
+
+        
     }
 
 

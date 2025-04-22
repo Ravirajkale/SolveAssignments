@@ -52,5 +52,18 @@ namespace PortfolioTrackerApi.Controllers
             // return CreatedAtAction(nameof(GetPortfolio), new { id = PortfolioResponse.Id }, PortfolioResponse);
             return Ok(PortfolioResponse);
         }
+        [HttpPut("quantity")]
+        public async Task<IActionResult> UpdateQuantity([FromBody] PortfolioStockUpdateDto portfolioStockUpdateDto)
+        {
+            var result = await _portfolioService.UpdateQuantityAsync(portfolioStockUpdateDto.StockId, portfolioStockUpdateDto.NewQuantity);
+            return result ? Ok("Quantity updated") : NotFound("Stock not found");
+        }
+
+        [HttpDelete("{stockId}")]
+        public async Task<IActionResult> DeleteStock(int stockId)
+        {
+            var result = await _portfolioService.DeleteStockAsync(stockId);
+            return result ? Ok("Stock deleted") : NotFound("Stock not found");
+        }
     }
 }

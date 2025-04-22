@@ -1,0 +1,86 @@
+.stock-card {
+    flex: 1 1 calc(50% - 10px);
+    min-width: 250px;
+    max-width: 300px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stock-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.stock-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.stock-price,
+.stock-quantity,
+.stock-purchaseValue,
+.stock-currentPrice,
+.stock-currentValue {
+    font-size: 14px;
+    color: #555;
+    margin: 2px 0;
+}
+
+.stock-currentPrice {
+    color: #007bff;
+}
+
+.stock-currentValue {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Profit/Loss */
+.profit {
+    color: green;
+}
+
+.loss {
+    color: red;
+}
+.stock-actions {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    gap: 10px;
+    margin-top: auto; /* Push actions to bottom */
+    padding-top: 12px;
+}
+
+.update-btn,
+.delete-btn {
+    margin-right: 10px;
+    margin-left: 30px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.update-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 3px;
+    font-size: 14px;
+    margin-left: 5px;
+}

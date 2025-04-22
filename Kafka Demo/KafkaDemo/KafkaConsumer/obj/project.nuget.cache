@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "CxQ6RnCBYU0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Kafka Demo\\KafkaDemo\\KafkaConsumer\\KafkaConsumer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rkale\\.nuget\\packages\\confluent.kafka\\2.9.0\\confluent.kafka.2.9.0.nupkg.sha512",
+    "C:\\Users\\rkale\\.nuget\\packages\\librdkafka.redist\\2.8.0\\librdkafka.redist.2.8.0.nupkg.sha512"
+  ],
+  "logs": []
+}

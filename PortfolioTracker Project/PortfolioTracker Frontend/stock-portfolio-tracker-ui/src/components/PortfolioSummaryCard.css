@@ -1,0 +1,28 @@
+.summary-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+.summary-card h3 {
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.summary-item {
+    display: flex;
+    justify-content:flex-start;
+    font-size: 1rem;
+    color: #444;
+}
+

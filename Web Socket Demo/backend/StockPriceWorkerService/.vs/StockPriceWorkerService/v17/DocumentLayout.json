@@ -1,0 +1,241 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|c:\\users\\rkale\\desktop\\solve assignments\\web socket demo\\backend\\stockpriceworkerservice\\stockpriceworkerservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|solutionrelative:stockpriceworkerservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|c:\\users\\rkale\\desktop\\solve assignments\\web socket demo\\backend\\stockpriceworkerservice\\stockpriceworkerservice\\services\\stockpricegeneratorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|solutionrelative:stockpriceworkerservice\\services\\stockpricegeneratorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|c:\\users\\rkale\\desktop\\solve assignments\\web socket demo\\backend\\stockpriceworkerservice\\stockpriceworkerservice\\services\\redisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|solutionrelative:stockpriceworkerservice\\services\\redisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|c:\\users\\rkale\\desktop\\solve assignments\\web socket demo\\backend\\stockpriceworkerservice\\stockpriceworkerservice\\services\\iredisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|solutionrelative:stockpriceworkerservice\\services\\iredisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|c:\\users\\rkale\\desktop\\solve assignments\\web socket demo\\backend\\stockpriceworkerservice\\stockpriceworkerservice\\models\\historicalstockprice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|solutionrelative:stockpriceworkerservice\\models\\historicalstockprice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|c:\\users\\rkale\\desktop\\solve assignments\\web socket demo\\backend\\stockpriceworkerservice\\stockpriceworkerservice\\repositories\\stockpricerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|solutionrelative:stockpriceworkerservice\\repositories\\stockpricerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|c:\\users\\rkale\\desktop\\solve assignments\\web socket demo\\backend\\stockpriceworkerservice\\stockpriceworkerservice\\repositories\\ihistoricalstockpricerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|solutionrelative:stockpriceworkerservice\\repositories\\ihistoricalstockpricerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|c:\\users\\rkale\\desktop\\solve assignments\\web socket demo\\backend\\stockpriceworkerservice\\stockpriceworkerservice\\repositories\\istockpricerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|solutionrelative:stockpriceworkerservice\\repositories\\istockpricerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|c:\\users\\rkale\\desktop\\solve assignments\\web socket demo\\backend\\stockpriceworkerservice\\stockpriceworkerservice\\repositories\\historicalstockpricerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|solutionrelative:stockpriceworkerservice\\repositories\\historicalstockpricerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|c:\\users\\rkale\\desktop\\solve assignments\\web socket demo\\backend\\stockpriceworkerservice\\stockpriceworkerservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|solutionrelative:stockpriceworkerservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|c:\\users\\rkale\\desktop\\solve assignments\\web socket demo\\backend\\stockpriceworkerservice\\stockpriceworkerservice\\stockpriceworkerservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|solutionrelative:stockpriceworkerservice\\stockpriceworkerservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|c:\\users\\rkale\\desktop\\solve assignments\\web socket demo\\backend\\stockpriceworkerservice\\stockpriceworkerservice\\db\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|solutionrelative:stockpriceworkerservice\\db\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|c:\\users\\rkale\\desktop\\solve assignments\\web socket demo\\backend\\stockpriceworkerservice\\stockpriceworkerservice\\models\\stockprice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEEC9002-B622-41D4-96B6-72E466BD45C3}|StockPriceWorkerService\\StockPriceWorkerService.csproj|solutionrelative:stockpriceworkerservice\\models\\stockprice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\Program.cs",
+              "RelativeDocumentMoniker": "StockPriceWorkerService\\Program.cs",
+              "ToolTip": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\Program.cs",
+              "RelativeToolTip": "StockPriceWorkerService\\Program.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwCMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T04:59:10.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StockPriceRepository.cs",
+              "DocumentMoniker": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\Repositories\\StockPriceRepository.cs",
+              "RelativeDocumentMoniker": "StockPriceWorkerService\\Repositories\\StockPriceRepository.cs",
+              "ToolTip": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\Repositories\\StockPriceRepository.cs",
+              "RelativeToolTip": "StockPriceWorkerService\\Repositories\\StockPriceRepository.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAYwB4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T05:02:26.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IStockPriceRepository.cs",
+              "DocumentMoniker": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\Repositories\\IStockPriceRepository.cs",
+              "RelativeDocumentMoniker": "StockPriceWorkerService\\Repositories\\IStockPriceRepository.cs",
+              "ToolTip": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\Repositories\\IStockPriceRepository.cs",
+              "RelativeToolTip": "StockPriceWorkerService\\Repositories\\IStockPriceRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T05:02:07.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RedisService.cs",
+              "DocumentMoniker": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\Services\\RedisService.cs",
+              "RelativeDocumentMoniker": "StockPriceWorkerService\\Services\\RedisService.cs",
+              "ToolTip": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\Services\\RedisService.cs",
+              "RelativeToolTip": "StockPriceWorkerService\\Services\\RedisService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T04:56:53.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StockPriceGeneratorService.cs",
+              "DocumentMoniker": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\Services\\StockPriceGeneratorService.cs",
+              "RelativeDocumentMoniker": "StockPriceWorkerService\\Services\\StockPriceGeneratorService.cs",
+              "ToolTip": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\Services\\StockPriceGeneratorService.cs",
+              "RelativeToolTip": "StockPriceWorkerService\\Services\\StockPriceGeneratorService.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAkwBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T04:35:55.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\appsettings.json",
+              "RelativeDocumentMoniker": "StockPriceWorkerService\\appsettings.json",
+              "ToolTip": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\appsettings.json",
+              "RelativeToolTip": "StockPriceWorkerService\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-07T05:11:59.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IRedisService.cs",
+              "DocumentMoniker": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\Services\\IRedisService.cs",
+              "RelativeDocumentMoniker": "StockPriceWorkerService\\Services\\IRedisService.cs",
+              "ToolTip": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\Services\\IRedisService.cs",
+              "RelativeToolTip": "StockPriceWorkerService\\Services\\IRedisService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T04:37:37.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IHistoricalStockPriceRepository.cs",
+              "DocumentMoniker": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\Repositories\\IHistoricalStockPriceRepository.cs",
+              "RelativeDocumentMoniker": "StockPriceWorkerService\\Repositories\\IHistoricalStockPriceRepository.cs",
+              "ToolTip": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\Repositories\\IHistoricalStockPriceRepository.cs",
+              "RelativeToolTip": "StockPriceWorkerService\\Repositories\\IHistoricalStockPriceRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T09:12:38.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HistoricalStockPrice.cs",
+              "DocumentMoniker": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\Models\\HistoricalStockPrice.cs",
+              "RelativeDocumentMoniker": "StockPriceWorkerService\\Models\\HistoricalStockPrice.cs",
+              "ToolTip": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\Models\\HistoricalStockPrice.cs",
+              "RelativeToolTip": "StockPriceWorkerService\\Models\\HistoricalStockPrice.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T04:54:30.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HistoricalStockPriceRepository.cs",
+              "DocumentMoniker": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\Repositories\\HistoricalStockPriceRepository.cs",
+              "RelativeDocumentMoniker": "StockPriceWorkerService\\Repositories\\HistoricalStockPriceRepository.cs",
+              "ToolTip": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\Repositories\\HistoricalStockPriceRepository.cs",
+              "RelativeToolTip": "StockPriceWorkerService\\Repositories\\HistoricalStockPriceRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T09:13:25.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\DB\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "StockPriceWorkerService\\DB\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\DB\\AppDbContext.cs",
+              "RelativeToolTip": "StockPriceWorkerService\\DB\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T04:53:41.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "StockPrice.cs",
+              "DocumentMoniker": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\Models\\StockPrice.cs",
+              "RelativeDocumentMoniker": "StockPriceWorkerService\\Models\\StockPrice.cs",
+              "ToolTip": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\Models\\StockPrice.cs",
+              "RelativeToolTip": "StockPriceWorkerService\\Models\\StockPrice.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T04:39:24.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "StockPriceWorkerService",
+              "DocumentMoniker": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\StockPriceWorkerService.csproj",
+              "RelativeDocumentMoniker": "StockPriceWorkerService\\StockPriceWorkerService.csproj",
+              "ToolTip": "C:\\Users\\rkale\\Desktop\\Solve Assignments\\Web Socket Demo\\backend\\StockPriceWorkerService\\StockPriceWorkerService\\StockPriceWorkerService.csproj",
+              "RelativeToolTip": "StockPriceWorkerService\\StockPriceWorkerService.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-07T04:27:04.59Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

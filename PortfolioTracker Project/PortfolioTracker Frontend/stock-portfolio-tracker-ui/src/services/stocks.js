@@ -20,7 +20,7 @@ export async function getStocks(token) {
 // Search for a stock by ticker (calls backend method that integrates with Alpha Vantage)
 export async function searchStock(ticker, token) {
     try {
-        const response = await axios.get(`${API_BASE_URL}/search?ticker=${ticker}`, {
+        const response = await axios.get(`${API_BASE_URL}/search/${ticker}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -29,6 +29,20 @@ export async function searchStock(ticker, token) {
     } catch (error) {
         console.error(`Error searching stock ${ticker}:`, error);
         throw error; // Re-throw the error for the component to handle
+    }
+}
+
+export async function searchStockalike(query, token) {
+    try {
+        const response = await axios.get(`${API_BASE_URL}/search?query=${encodeURIComponent(query)}`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
+        return response.data; // List of matching stocks with price and last updated
+    } catch (error) {
+        console.error(`Error searching stock "${query}":`, error);
+        throw error;
     }
 }
 

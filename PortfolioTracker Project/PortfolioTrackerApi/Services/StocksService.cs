@@ -26,7 +26,7 @@ namespace PortfolioTrackerApi.Services
         public async Task<List<StockPrice>> GetAvailableStocksAsync()
         {
             var cachedStocks = await _redisService.GetStockPricesAsync();
-            if (cachedStocks.Any()) return cachedStocks;
+            if (cachedStocks.Any()) return cachedStocks.Take(20).ToList();
 
             var stocks = await _stockRepository.GetAllStocksAsync();
             await _redisService.SetStockPricesAsync(stocks);
@@ -77,10 +77,11 @@ namespace PortfolioTrackerApi.Services
                 var stockPrice = cachedStocks.FirstOrDefault(s => s.Ticker == stock.Ticker) ?? await _stockRepository.GetStockBySymbolAsync(stock.Ticker);
                 portfolioStocks.Add(new StockDto
                 {
+                    StockId = stock.Id,
                     Ticker = stock.Ticker,
                     Company = stock.Name,
                     CurrentPrice = stockPrice?.CurrentPrice ?? 0,
-                    PurchasePrice=stock.PurchasePrice,
+                    PurchasePrice = stock.PurchasePrice,
                     Quantity = stock.Quantity,
                     TotalCurrentValue = (stockPrice?.CurrentPrice ?? 0) * stock.Quantity,
                     TotalPurchasedValue = stock.PurchasePrice * stock.Quantity
@@ -96,10 +97,21 @@ namespace PortfolioTrackerApi.Services
             string url = $"https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={ticker}.BSE&apikey={apiKey}";
 
             var response = await _httpClient.GetStringAsync(url);
+            Console.WriteLine(response);
             var json = JsonDocument.Parse(response);
             var root = json.RootElement;
 
-            if (!root.TryGetProperty("Global Quote", out var stockData)) return null;
+            if (!root.TryGetProperty("Global Quote", out var stockData) || stockData.GetRawText() == "{}")
+            {
+                Console.WriteLine($"Stock data for ticker {ticker} not found.");
+                return null;
+            }
+
+            if (!stockData.TryGetProperty("05. price", out var priceProperty) || string.IsNullOrWhiteSpace(priceProperty.GetString()))
+            {
+                Console.WriteLine($"Price data for ticker {ticker} not available.");
+                return null;
+            }
 
             var stock = new StockPrice
             {

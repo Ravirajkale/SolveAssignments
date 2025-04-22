@@ -74,6 +74,11 @@ function Home() {
         <div className="home-container">
             <h2>My Portfolios</h2>
             <button className = "createPortfolioButton" onClick={handleAddPortfolioClick}>Create Portfolio</button>
+            <button className="statisticsButton">
+                <Link to="/statistics" style={{ textDecoration: 'none', color: 'inherit' }}>
+                     Show Statistics
+                </Link>
+            </button>
             <AddPortfolioModal
                 isOpen={isModalOpen}
                 onClose={handleCloseModal}

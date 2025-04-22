@@ -1,0 +1,107 @@
+.statistics-container {
+    width: 100%;
+    padding: 12px 40px;
+    box-sizing: border-box;
+}
+
+.statistics-container h2 {
+  /*  margin-top: 20px; */
+    font-size: 24px;
+    color: #333;
+}
+
+.chart-section {
+    display: flex;
+    flex-direction: column; /* Stack charts vertically */
+    gap: 5px; /* Space between charts */
+    max-height: 313px; /* Set max height */
+    overflow-y: auto; /* Enable vertical scroll */
+    padding-right: 10px; /* For scrollbar spacing */
+}
+
+.loading-text {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    padding: 40px 0;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  
+  .search-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .search-button:hover {
+    background-color: #1565c0;
+  }
+  .search-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Optional: wraps nicely on smaller screens */
+    margin-bottom: 1rem;
+  }
+  
+  .search-controls {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .date-select {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    padding-right: 60px;
+  }
+  
+  .date-select label {
+    margin-right: 0.25rem;
+    color: #555;
+  }
+  
+  .date-select select {
+    padding: 0.4rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .date-select select:hover {
+    border-color: #007bff;
+    background-color: #fff;
+  }
+  
+  .date-select select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }

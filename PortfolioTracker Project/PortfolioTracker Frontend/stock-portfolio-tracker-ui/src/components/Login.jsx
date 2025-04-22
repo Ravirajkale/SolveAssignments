@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate,Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
 import { login } from '../services/common'; // Import the login service
 import { toast } from 'react-toastify';
@@ -22,7 +22,7 @@ function Login() {
             if (data && data.token) {
                 localStorage.setItem('token', data.token);
                 console.log(data.token);
-                 await authLogin(data.token);
+                await authLogin(data.token);
                 toast.success(`Hey, ${data.firstName} Welcome aboard!`);
                 navigate('/home');
             } else {
@@ -38,31 +38,32 @@ function Login() {
 
     return (
         <div className="login-container">
-        <div className="login-card">
-            <h2>Login</h2>
-            {error && <p className="error-message">{error}</p>}
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="login-input"
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="login-input"
-                />
-                <button type="submit" className="login-button">Login</button>
-            </form>
-            <p>
-                Don't have an account? <Link to="/register">Register here</Link>
-            </p>
+           
+            <div className="login-card">
+                <h2>Login</h2>
+                {error && <p className="error-message">{error}</p>}
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="login-input"
+                    />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className="login-input"
+                    />
+                    <button type="submit" className="login-button">Login</button>
+                </form>
+                <p>
+                    Don't have an account? <Link to="/register">Register here</Link>
+                </p>
+            </div>
         </div>
-    </div>
     );
 }
 

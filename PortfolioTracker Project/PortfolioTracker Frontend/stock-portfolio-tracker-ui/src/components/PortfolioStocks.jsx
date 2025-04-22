@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { getPortfolioStocks } from "../services/stocks";
+import { updateStockQuantity, deleteStock } from "../services/portfolios";
 import { useAuth } from "../AuthContext";
-import { useLocation } from "react-router-dom";
-import { subscribeToWebSocket, unsubscribeFromWebSocket } from "../services/WebSocketService"; // Import WebSocket service
+import { subscribeToWebSocket, unsubscribeFromWebSocket } from "../services/WebSocketService";
 import './PortfolioStocks.css';
+import PortfolioStockCard from "./PortfolioStockCard";
+
 const PortfolioStocks = () => {
     const { portfolioId } = useParams();
     const navigate = useNavigate();
     const [stocks, setStocks] = useState([]);
+    const [originalStocks, setOriginalStocks] = useState([]); 
     const [filteredStocks, setFilteredStocks] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
     const [loading, setLoading] = useState(true);
@@ -19,10 +22,19 @@ const PortfolioStocks = () => {
 
     const fetchPortfolioStocks = async () => {
         try {
-            setLoading(true);
             const data = await getPortfolioStocks(portfolioId, token);
-            setStocks(data);
-            setFilteredStocks(data);
+            setOriginalStocks(data); //  Store full list for filtering/reset
+            console.log("Fetched portfolio data:", data);
+            setStocks((prevStocks) => {
+                return prevStocks.map((prevStock) => {
+                    const updated = data.find(s => s.ticker === prevStock.ticker);
+                    return updated
+                        ? { ...prevStock, currentPrice: updated.currentPrice, totalCurrentValue: updated.totalCurrentValue }
+                        : prevStock;
+                });
+            });
+
+            setFilteredStocks(data); // Display initially
         } catch (err) {
             setError("Error fetching portfolio stocks.");
         } finally {
@@ -32,24 +44,38 @@ const PortfolioStocks = () => {
 
     useEffect(() => {
         fetchPortfolioStocks();
-
-        // Subscribe to WebSocket updates
         subscribeToWebSocket(fetchPortfolioStocks);
-
-        return () => {
-            unsubscribeFromWebSocket(fetchPortfolioStocks);
-        };
+        return () => unsubscribeFromWebSocket(fetchPortfolioStocks);
     }, [portfolioId, token]);
 
-    // Handle search input
+    const handleUpdateStock = async (stockId, newQuantity) => {
+        try {
+            await updateStockQuantity(stockId, newQuantity,token);
+            fetchPortfolioStocks(); // Refresh list
+        } catch (err) {
+            console.error("Update failed:", err);
+        }
+    };
+    
+    const handleDeleteStock = async (stockId) => {
+        try {
+            await deleteStock(stockId,token);
+            fetchPortfolioStocks(); // Refresh list
+        } catch (err) {
+            console.error("Delete failed:", err);
+        }
+    };
+
     const handleSearchChange = (e) => {
         const query = e.target.value.toUpperCase();
         setSearchQuery(query);
 
-        if (query === "") {
-            setFilteredStocks(stocks);
+        if (!query.trim()) {
+            setFilteredStocks(originalStocks); // ✅ Reset list after clearing search
         } else {
-            setFilteredStocks(stocks.filter((stock) => stock.ticker.includes(query)));
+            setFilteredStocks(
+                originalStocks.filter((stock) => stock.ticker.includes(query))
+            );
         }
     };
 
@@ -66,7 +92,6 @@ const PortfolioStocks = () => {
                 </button>
             </div>
 
-            {/* Search Bar */}
             <input
                 type="text"
                 placeholder="Search by stock symbol..."
@@ -80,31 +105,12 @@ const PortfolioStocks = () => {
             ) : error ? (
                 <p className="error-text">{error}</p>
             ) : (
-                <div className="stocks-list">
+                <div className="stocks-list-portfolio">
                     {filteredStocks.length > 0 ? (
-                        filteredStocks.map((stock, index) => {
-                            const profitLoss = stock.totalCurrentValue - stock.totalPurchasedValue;
-                            const isProfit = profitLoss >= 0;
-                            return (
-                                <div key={`${stock.ticker}-${index}`} className="stock-card">
-                                    <div>
-                                        <h2 className="stock-title">{stock.company} ({stock.ticker})</h2>
-                                        <p className="stock-currentPrice">Current Price: ₹{stock.currentPrice}</p>
-                                        <p className="stock-price">Purchase Price: ₹{stock.purchasePrice}</p>
-                                        <p className="stock-quantity">Quantity: {stock.quantity}</p>
-                                        <p className="stock-purchaseValue">Purchased Value: ₹{stock.totalPurchasedValue}</p>
-                                        <p className="stock-currentValue">Current Value: ₹{stock.totalCurrentValue}</p>
-                                        <p 
-                                            className={`stock-currentValue ${isProfit ? "profit" : "loss"}`}
-                                        >
-                                            {isProfit 
-                                                ? `+₹${profitLoss.toFixed(2)}` 
-                                                : `-₹${Math.abs(profitLoss).toFixed(2)}`}
-                                        </p>
-                                    </div>
-                                </div>
-                            );
-                        })
+                        filteredStocks.map((stock, index) => (
+                            <PortfolioStockCard key={`${stock.ticker}-${index}`} stock={stock}  onUpdate={handleUpdateStock}
+                            onDelete={handleDeleteStock} />
+                        ))
                     ) : (
                         <p className="no-stocks-text">No matching stocks found.</p>
                     )}

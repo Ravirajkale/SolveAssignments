@@ -8,7 +8,12 @@ namespace PortfolioTrackerApi.Repositories
         Task<StockPrice> GetStockBySymbolAsync(string ticker);
         Task AddStockAsync(StockPrice stock);
         Task SaveChangesAsync();
-
+        Task<List<Stock>> GetPortfolioStocks(int portfolioid);
         Task AddPortfolioStockAsync(Stock stock);
+        Task<List<Stock>> GetStocksStartingWith(string query);
+        Task<List<string>> GetRandomStockSymbolsAsync(int count);
+        Task DeleteAsync(Stock stock);
+        Task<Stock> GetByIdAsync(int stockId);
+        Task UpdateAsync(Stock stock);
     }
 }

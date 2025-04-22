@@ -50,11 +50,15 @@ builder.Services.AddScoped<IPortfolioRepository, PortfolioRepository>();
 builder.Services.AddScoped<IPortfolioService,PortfolioService>();
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<IStocksRepository, StocksRepository>();
+builder.Services.AddScoped<IHistoricalStockPriceRepository,HistoricalStockPriceRepository>();
+builder.Services.Decorate<IHistoricalStockPriceRepository, HistoricalCacheDecorator>();
+builder.Services.AddScoped<IStatisticsService,StatisticsService>();
 builder.Services.AddScoped<StocksService>();
 //builder.Services.AddSingleton<IRedisService, RedisService>();
 //builder.Services.AddHostedService<StockPriceUpdaterService>();
 builder.Services.AddSingleton<WebSocketHandler>();
-builder.Services.AddHostedService<StockPriceGeneratorService>();
+builder.Services.AddHostedService<RedisSubscriberService>();
+//builder.Services.AddHostedService<StockPriceGeneratorService>();
 #endregion
 
 

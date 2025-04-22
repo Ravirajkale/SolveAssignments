@@ -154,6 +154,136 @@
         }
       }
     },
+    "/api/Portfolios/quantity": {
+      "put": {
+        "tags": [
+          "Portfolios"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PortfolioStockUpdateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PortfolioStockUpdateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PortfolioStockUpdateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Portfolios/{stockId}": {
+      "delete": {
+        "tags": [
+          "Portfolios"
+        ],
+        "parameters": [
+          {
+            "name": "stockId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/statistics/portfolio-summary": {
+      "get": {
+        "tags": [
+          "PortfolioStatistics"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/statistics/historical-chart/{ticker}": {
+      "get": {
+        "tags": [
+          "PortfolioStatistics"
+        ],
+        "parameters": [
+          {
+            "name": "ticker",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/statistics/default-historical-charts/{date}": {
+      "get": {
+        "tags": [
+          "PortfolioStatistics"
+        ],
+        "parameters": [
+          {
+            "name": "date",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/statistics/available-dates": {
+      "get": {
+        "tags": [
+          "PortfolioStatistics"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Stocks/available": {
       "get": {
         "tags": [
@@ -176,6 +306,27 @@
             "name": "ticker",
             "in": "path",
             "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Stocks/search": {
+      "get": {
+        "tags": [
+          "Stocks"
+        ],
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
             "schema": {
               "type": "string"
             }
@@ -325,6 +476,32 @@
             "nullable": true
           },
           "stocksCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "purchaseValue": {
+            "type": "number",
+            "format": "double"
+          },
+          "currentValue": {
+            "type": "number",
+            "format": "double"
+          },
+          "portfoliosWithNoStocks": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PortfolioStockUpdateDto": {
+        "type": "object",
+        "properties": {
+          "stockId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "newQuantity": {
             "type": "integer",
             "format": "int32"
           }

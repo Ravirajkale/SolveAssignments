@@ -1,0 +1,22 @@
+.chart-card {
+    background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 98%; /* VERY IMPORTANT */
+  height: 308px; /* or whatever height you prefer */
+  margin: 3px;
+  box-sizing: border-box;
+  }
+  
+  .chart-card:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+  
+  .chart-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 1rem;
+  }

@@ -36,5 +36,48 @@ namespace PortfolioTrackerApi.Repositories
             await _context.SaveChangesAsync();
 
         }
+
+        public async Task<List<Stock>> GetStocksStartingWith(string query)
+        {
+            return await _context.Stocks
+                .Where(s =>
+                        s.Ticker.ToLower().Contains(query.ToLower()) ||
+                        s.Name.ToLower().Contains(query.ToLower()))
+                .OrderBy(s => s.Ticker)
+                .Take(15) // Limit to 15 results
+                .ToListAsync();
+        }
+        public async Task<List<string>> GetRandomStockSymbolsAsync(int count)
+        {
+            return await _context.Stocks
+                .OrderBy(x => Guid.NewGuid()) // Random order
+                .Select(s => s.Ticker)
+                .Take(count)
+                .ToListAsync();
+        }
+
+        public async Task<List<Stock>> GetPortfolioStocks(int portfolioid)
+        {
+            return await _context.Stocks
+                .Where(s => s.PortfolioId == portfolioid).ToListAsync();
+        }
+
+        public async Task DeleteAsync(Stock stock)
+        {
+            _context.Stocks.Remove(stock);
+            await Task.CompletedTask;
+        }
+
+        public async Task<Stock> GetByIdAsync(int stockId)
+        {
+            return await _context.Stocks
+                .FirstOrDefaultAsync(s => s.Id == stockId);
+        }
+
+        public async Task UpdateAsync(Stock stock)
+        {
+            _context.Stocks.Update(stock);
+            await Task.CompletedTask;
+        }
     }
 }

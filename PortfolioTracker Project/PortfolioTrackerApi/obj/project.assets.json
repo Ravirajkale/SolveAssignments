@@ -1020,14 +1020,10 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.Extensions.DependencyModel/8.0.0": {
+      "Microsoft.Extensions.DependencyModel/8.0.2": {
         "type": "package",
-        "dependencies": {
-          "System.Text.Encodings.Web": "8.0.0",
-          "System.Text.Json": "8.0.0"
-        },
         "compile": {
-          "lib/net8.0/_._": {
+          "lib/net8.0/Microsoft.Extensions.DependencyModel.dll": {
             "related": ".xml"
           }
         },
@@ -1673,6 +1669,23 @@
         "runtime": {
           "lib/net5.0/Pipelines.Sockets.Unofficial.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Scrutor/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1",
+          "Microsoft.Extensions.DependencyModel": "8.0.2"
+        },
+        "compile": {
+          "lib/net8.0/Scrutor.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Scrutor.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -3869,10 +3882,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.DependencyModel/8.0.0": {
-      "sha512": "NSmDw3K0ozNDgShSIpsZcbFIzBX4w28nDag+TfaQujkXGazBm+lid5onlWoCBy4VsLxqnnKjEBbGSJVWJMf43g==",
+    "Microsoft.Extensions.DependencyModel/8.0.2": {
+      "sha512": "mUBDZZRgZrSyFOsJ2qJJ9fXfqd/kXJwf3AiDoqLD9m6TjY5OO/vLNOb9fb4juC0487eq4hcGN/M2Rh/CKS7QYw==",
       "type": "package",
-      "path": "microsoft.extensions.dependencymodel/8.0.0",
+      "path": "microsoft.extensions.dependencymodel/8.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3894,7 +3907,7 @@
         "lib/net8.0/Microsoft.Extensions.DependencyModel.xml",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.dll",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.xml",
-        "microsoft.extensions.dependencymodel.8.0.0.nupkg.sha512",
+        "microsoft.extensions.dependencymodel.8.0.2.nupkg.sha512",
         "microsoft.extensions.dependencymodel.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -4774,6 +4787,27 @@
         "lib/netstandard2.1/Pipelines.Sockets.Unofficial.xml",
         "pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
         "pipelines.sockets.unofficial.nuspec"
+      ]
+    },
+    "Scrutor/6.0.1": {
+      "sha512": "5xKT6ND5GqnFzwSaYozHCJe75GFL8sPy4yw/iRFqeBFGlmqPNFpOg1T9Q0Gl2h76Cklt0ZTg6Ypkri5iUBKXsA==",
+      "type": "package",
+      "path": "scrutor/6.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net462/Scrutor.dll",
+        "lib/net462/Scrutor.pdb",
+        "lib/net462/Scrutor.xml",
+        "lib/net8.0/Scrutor.dll",
+        "lib/net8.0/Scrutor.pdb",
+        "lib/net8.0/Scrutor.xml",
+        "lib/netstandard2.0/Scrutor.dll",
+        "lib/netstandard2.0/Scrutor.pdb",
+        "lib/netstandard2.0/Scrutor.xml",
+        "scrutor.6.0.1.nupkg.sha512",
+        "scrutor.nuspec"
       ]
     },
     "StackExchange.Redis/2.8.31": {
@@ -5967,6 +6001,7 @@
       "Microsoft.Extensions.DependencyInjection >= 9.0.3",
       "Microsoft.Extensions.Hosting >= 9.0.3",
       "Microsoft.IdentityModel.Tokens >= 7.0.3",
+      "Scrutor >= 6.0.1",
       "StackExchange.Redis >= 2.8.31",
       "Swashbuckle.AspNetCore >= 6.6.2",
       "System.Text.Json >= 9.0.3"
@@ -6073,6 +6108,10 @@
           "Microsoft.IdentityModel.Tokens": {
             "target": "Package",
             "version": "[7.0.3, )"
+          },
+          "Scrutor": {
+            "target": "Package",
+            "version": "[6.0.1, )"
           },
           "StackExchange.Redis": {
             "target": "Package",

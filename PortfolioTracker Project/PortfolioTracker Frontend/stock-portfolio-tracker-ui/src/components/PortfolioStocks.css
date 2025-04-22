@@ -1,5 +1,5 @@
 .portfolio-container {
-    max-width: 800px;
+    max-width: 90%;
     margin: 0 auto;
     padding: 20px;
 }
@@ -56,15 +56,14 @@
     font-size: 16px;
 }
 
-.stocks-list {
+.stocks-list-portfolio {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    max-height: 400px;
+    max-height: 509px;
     overflow-y: auto;
     padding: 10px;
-    width: 95%;
-    justify-content: center; /* Center items when fewer stocks remain */
+    width: 98%;
 }
 
 .stock-card {

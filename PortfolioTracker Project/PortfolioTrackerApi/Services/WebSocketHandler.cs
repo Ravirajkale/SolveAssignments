@@ -44,8 +44,8 @@ namespace PortfolioTrackerApi.Services
 
         public async Task NotifyStockPriceUpdate()
         {
-            var stocks = await _redisService.GetStockPricesAsync();
-            var message = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(new { type = "price-updated", stocks }));
+           // var stocks = await _redisService.GetStockPricesAsync();
+            var message = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(new { type = "price-updated"}));
 
             var buffer = new ArraySegment<byte>(message);
             var tasks = new List<Task>();

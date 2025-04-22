@@ -47,5 +47,18 @@ namespace PortfolioTrackerApi.Repositories
         {
             return await _context.Portfolios.Include(p => p.Stocks).FirstOrDefaultAsync(p => p.Id == portfolioId);
         }
+        public async Task<IEnumerable<Portfolio>> GetUserPortfoliosWithStocksAsync(string userId)
+        {
+            return await _context.Portfolios
+                .Where(p => p.UserId == userId)
+                .Include(p => p.Stocks)
+                .ToListAsync();
+        }
+        public async Task<List<Portfolio>> GetAllPortfoliosWithStocksAsync()
+        {
+            return await _context.Portfolios
+                .Include(p => p.Stocks)
+                .ToListAsync();
+        }
     }
 }

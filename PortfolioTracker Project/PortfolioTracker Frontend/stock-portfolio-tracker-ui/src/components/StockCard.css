@@ -10,7 +10,7 @@
     transition: transform 0.2s ease-in-out;
     width: 100%;
     flex: 1 1 calc(50% - 16px); /* Ensure two cards per row */
-    max-width: 43%; /* Prevent full-width cards */
+    max-width: 20%; /* Prevent full-width cards */
 }
 
 .stock-card:hover {

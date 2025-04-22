@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"; 
 import { useAuth } from '../AuthContext';
-import { getStocks, searchStock, addStockToPortfolio } from "../services/stocks";
+import { debounce, isString } from "lodash";
+import { getStocks, searchStock, addStockToPortfolio, searchStockalike } from "../services/stocks";
 import StockCard from "../components/StockCard";
 import "./AddStocks.css"; // Import CSS
 
@@ -30,28 +31,53 @@ function AddStocks () {
     const handleSearch = (e) => {
         const value = e.target.value;
         setSearchTerm(value);
-
-        if (value.trim() === "") {
-            setFilteredStocks(stocks); 
-        } else {
-            const filtered = stocks.filter((stock) =>
-                stock.company.toLowerCase().includes(value.toLowerCase()) ||
-                stock.ticker.toLowerCase().includes(value.toLowerCase())
-            );
-            setFilteredStocks(filtered);
-        }
+        debouncedSearch(value);
     };
 
-    const handleSearchBackend = async () => {
-        if (!searchTerm) return;
+    const handleSearchApi=async(value)=>{
+        if (!value) return;
         try {
-            const stock = await searchStock(searchTerm, token);
-            setFilteredStocks(stock ? [stock] : []);
+            const stock = await searchStock(value, token);
+            if (stock) {
+                setFilteredStocks([stock]);
+            } else {
+                alert("Stock not found or no data available.");
+                setFilteredStocks([]);
+            }
         } catch (error) {
             console.error("Error fetching stock from API:", error);
+            alert("Something went wrong while searching the stock.");
         }
     };
-
+   // 500ms delay
+    const handleSearchBackend = async (value) => {
+      if(!value || typeof value !== "string" || !value.trim() ){
+        setFilteredStocks([])
+      }
+        if (!value.trim()) {
+            setFilteredStocks(stocks); // or reset to initial stocks if needed
+            return;
+        }
+    
+        try {
+            const result = await searchStockalike(value, token);
+            setFilteredStocks(result || []);
+        } catch (error) {
+            console.error("Error fetching stock from backend:", error);
+        }
+    };
+    const debouncedSearch = debounce(handleSearchBackend, 200);
+    const handleQuantityChange = (e) => {
+        const value = e.target.value;
+        const numValue = Number(value);
+    
+        // Allow only numbers between 1 and 1,000,000
+        if (numValue >= 1 && numValue <= 1000000) {
+            setQuantity(numValue);
+        } else {
+            setQuantity(""); // Reset if out of bounds
+        }
+    };
     const handleAddStock = async () => {
         if (!selectedStock) return;
         try {
@@ -84,7 +110,7 @@ function AddStocks () {
                     value={searchTerm}
                     onChange={handleSearch}
                 />
-                <button className="search-button" onClick={handleSearchBackend}>
+                <button className="search-button" onClick={() => handleSearchApi(searchTerm)}>
                     Search
                 </button>
             </div>
@@ -113,7 +139,7 @@ function AddStocks () {
                             min="1"
                             className="modal-input"
                             value={quantity}
-                            onChange={(e) => setQuantity(e.target.value)}
+                            onChange={handleQuantityChange}
                         />
 
                         <div className="modal-buttons">

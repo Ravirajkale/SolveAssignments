@@ -5,6 +5,7 @@ import Register from './components/Register';
 import Home from './components/Home';
 import PortfolioStocks from './components/PortfolioStocks';
 import AddStocks from './components/AddStocks';
+import Statistics from './components/Statistics'
 import { AuthProvider, useAuth } from './AuthContext';
 import { ToastContainer } from 'react-toastify'; // Import ToastContainer
 import 'react-toastify/dist/ReactToastify.css'; // Import CSS
@@ -31,6 +32,7 @@ function App() {
                             <AddStocks />
                         </PrivateRoute>
                     } />
+                    <Route path="/statistics" element={<Statistics />} />
                     <Route path="*" element={<Navigate to="/login" />} />
                 </Routes>
                  <ToastContainer

@@ -79,6 +79,95 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PortfolioTrackerApi.Controllers.PortfoliosController",
+    "Method": "DeleteStock",
+    "RelativePath": "api/Portfolios/{stockId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "stockId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PortfolioTrackerApi.Controllers.PortfoliosController",
+    "Method": "UpdateQuantity",
+    "RelativePath": "api/Portfolios/quantity",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "portfolioStockUpdateDto",
+        "Type": "PortfolioTrackerApi.DTOS.PortfolioStockUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PortfolioTrackerApi.Controllers.PortfolioStatisticsController",
+    "Method": "GetAvailableDates",
+    "RelativePath": "api/statistics/available-dates",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PortfolioTrackerApi.Controllers.PortfolioStatisticsController",
+    "Method": "GetDefaultHistoricalCharts",
+    "RelativePath": "api/statistics/default-historical-charts/{date}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "date",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PortfolioTrackerApi.Controllers.PortfolioStatisticsController",
+    "Method": "GetHistoricalChartData",
+    "RelativePath": "api/statistics/historical-chart/{ticker}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ticker",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "date",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PortfolioTrackerApi.Controllers.PortfolioStatisticsController",
+    "Method": "GetPortfolioSummary",
+    "RelativePath": "api/statistics/portfolio-summary",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PortfolioTrackerApi.Controllers.StocksController",
     "Method": "GetPortfolioStocks",
     "RelativePath": "api/Stocks/{portfolioId}/stocks",
@@ -118,6 +207,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PortfolioTrackerApi.Controllers.StocksController",
+    "Method": "SearchStocks",
+    "RelativePath": "api/Stocks/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
