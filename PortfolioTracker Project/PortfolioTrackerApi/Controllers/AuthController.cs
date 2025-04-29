@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PortfolioTrackerApi.DTOS;
-using PortfolioTrackerApi.Services;
+using PortfolioTrackerApi.Service_Interfaces;
 
 namespace PortfolioTrackerApi.Controllers
 {

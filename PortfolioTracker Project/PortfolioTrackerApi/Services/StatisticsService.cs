@@ -1,5 +1,6 @@
 ﻿using PortfolioTrackerApi.DTOS;
 using PortfolioTrackerApi.Repositories;
+using PortfolioTrackerApi.Service_Interfaces;
 
 namespace PortfolioTrackerApi.Services
 {
@@ -26,6 +27,8 @@ namespace PortfolioTrackerApi.Services
         {
             var portfolios = await _portfolioRepo.GetUserPortfoliosWithStocksAsync(userId);
             var currentPrices = await _redisService.GetStockPricesAsync();
+            if (currentPrices == null || currentPrices.Count == 0)
+                currentPrices = await _stocksRepository.GetAllStocksAsync();
 
             decimal totalInvested = 0;
             decimal totalCurrentValue = 0;

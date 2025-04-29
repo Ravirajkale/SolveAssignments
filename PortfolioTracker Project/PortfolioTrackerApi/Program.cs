@@ -6,7 +6,9 @@ using Microsoft.IdentityModel.Tokens;
 using PortfolioTrackerApi.DAL;
 using PortfolioTrackerApi.Entities;
 using PortfolioTrackerApi.Repositories;
+using PortfolioTrackerApi.Service_Interfaces;
 using PortfolioTrackerApi.Services;
+using PortfolioTrackerApi.Services.StockPriceApi;
 using StackExchange.Redis;
 using System;
 using System.Text;
@@ -33,6 +35,7 @@ builder.Services.AddCors(options =>
 });
 #endregion
 
+
 #region Adding DBContext
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -48,26 +51,40 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IPortfolioRepository, PortfolioRepository>();
 builder.Services.AddScoped<IPortfolioService,PortfolioService>();
-builder.Services.AddHttpClient();
 builder.Services.AddScoped<IStocksRepository, StocksRepository>();
 builder.Services.AddScoped<IHistoricalStockPriceRepository,HistoricalStockPriceRepository>();
-builder.Services.Decorate<IHistoricalStockPriceRepository, HistoricalCacheDecorator>();
 builder.Services.AddScoped<IStatisticsService,StatisticsService>();
 builder.Services.AddScoped<StocksService>();
+
+builder.Services.AddHttpClient();
+builder.Services.AddHttpClient<AlphaVantageService>();
+builder.Services.AddHttpClient<TwelveDataService>();
 //builder.Services.AddSingleton<IRedisService, RedisService>();
 //builder.Services.AddHostedService<StockPriceUpdaterService>();
+builder.Services.Decorate<IHistoricalStockPriceRepository, HistoricalCacheDecorator>();
+
 builder.Services.AddSingleton<WebSocketHandler>();
+
 builder.Services.AddHostedService<RedisSubscriberService>();
+
+builder.Services.AddTransient<IStockPriceApiService, AlphaVantageService>();
+builder.Services.AddTransient<IStockPriceApiService, TwelveDataService>();
+builder.Services.AddTransient<StockPriceApiManager>();
 //builder.Services.AddHostedService<StockPriceGeneratorService>();
 #endregion
 
+builder.Services.Configure<HostOptions>(opts =>
+{
+    opts.BackgroundServiceExceptionBehavior = BackgroundServiceExceptionBehavior.Ignore;
+});
 
 #region Redis
 builder.Services.AddSingleton<IConnectionMultiplexer>(provider =>
 {
     var config = ConfigurationOptions.Parse(builder.Configuration["Redis:ConnectionString"]);
-    config.ConnectTimeout = 15000; // Increase timeout to 15 sec
-    config.SyncTimeout = 15000;    // Increase sync timeout to 15 sec
+    config.ConnectTimeout = 3000; // Increase timeout to 3 sec
+    config.SyncTimeout = 3000;    // Increase sync timeout to 15 sec
+    config.ConnectRetry = 1;
     config.AbortOnConnectFail = false; // Prevent failures on startup
     return ConnectionMultiplexer.Connect(config);
 });

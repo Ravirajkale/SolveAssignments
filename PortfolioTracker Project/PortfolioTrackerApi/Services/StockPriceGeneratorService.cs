@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PortfolioTrackerApi.DAL;
 using PortfolioTrackerApi.Entities;
+using PortfolioTrackerApi.Service_Interfaces;
 using System.Collections.Concurrent;
 
 namespace PortfolioTrackerApi.Services

@@ -1,4 +1,5 @@
 ﻿using PortfolioTrackerApi.Entities;
+using PortfolioTrackerApi.Service_Interfaces;
 using StackExchange.Redis;
 using System.Text.Json;
 

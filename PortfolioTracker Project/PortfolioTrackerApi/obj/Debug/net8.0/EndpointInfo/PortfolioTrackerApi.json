@@ -393,6 +393,46 @@
         }
       }
     },
+    "/api/Stocks/save": {
+      "post": {
+        "tags": [
+          "Stocks"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ScrapperDto"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ScrapperDto"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ScrapperDto"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [
@@ -533,6 +573,28 @@
           "password": {
             "minLength": 6,
             "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ScrapperDto": {
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string",
+            "nullable": true
+          },
+          "last_price": {
+            "type": "string",
+            "nullable": true
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "change": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

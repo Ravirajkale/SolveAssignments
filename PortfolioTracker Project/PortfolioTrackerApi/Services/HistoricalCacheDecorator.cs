@@ -1,5 +1,6 @@
 ﻿using PortfolioTrackerApi.Entities;
 using PortfolioTrackerApi.Repositories;
+using PortfolioTrackerApi.Service_Interfaces;
 using System.Text.Json;
 
 namespace PortfolioTrackerApi.Services
@@ -48,8 +49,9 @@ namespace PortfolioTrackerApi.Services
             }
 
             var dbData = await _inner.GetByTickerAndDateAsync(ticker, date);
-            if (dbData.Any())
+            if (dbData.Count!=0)
             {
+                
                 await _redis.SetValueAsync(cacheKey, JsonSerializer.Serialize(dbData), TimeSpan.FromHours(6));
             }
 

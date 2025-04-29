@@ -2,6 +2,7 @@
 using System.Text.Json;
 using System.Text;
 using System.Collections.Concurrent;
+using PortfolioTrackerApi.Service_Interfaces;
 
 namespace PortfolioTrackerApi.Services
 {
@@ -51,6 +52,7 @@ namespace PortfolioTrackerApi.Services
             var tasks = new List<Task>();
 
             foreach (var socket in _sockets)
+
             {
                 if (socket.State == WebSocketState.Open)
                 {

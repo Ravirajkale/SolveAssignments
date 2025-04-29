@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using PortfolioTrackerApi.Services;
+using PortfolioTrackerApi.Service_Interfaces;
 using System.Security.Claims;
 
 namespace PortfolioTrackerApi.Controllers

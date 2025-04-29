@@ -24,7 +24,11 @@ namespace PortfolioTrackerApi.Repositories
             await _context.StocksPrice.AddAsync(stock);
         }
 
-
+        public async Task UpdateAsync(StockPrice stock)
+        {
+            _context.StocksPrice.Update(stock);
+            await Task.CompletedTask;
+        }
         public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();
@@ -37,12 +41,12 @@ namespace PortfolioTrackerApi.Repositories
 
         }
 
-        public async Task<List<Stock>> GetStocksStartingWith(string query)
+        public async Task<List<StockPrice>> GetStocksStartingWith(string query)
         {
-            return await _context.Stocks
+            return await _context.StocksPrice
                 .Where(s =>
                         s.Ticker.ToLower().Contains(query.ToLower()) ||
-                        s.Name.ToLower().Contains(query.ToLower()))
+                        s.Company.ToLower().Contains(query.ToLower()))
                 .OrderBy(s => s.Ticker)
                 .Take(15) // Limit to 15 results
                 .ToListAsync();

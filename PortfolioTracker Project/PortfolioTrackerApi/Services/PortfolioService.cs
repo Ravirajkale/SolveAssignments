@@ -1,6 +1,7 @@
 ﻿using PortfolioTrackerApi.DTOS;
 using PortfolioTrackerApi.Entities;
 using PortfolioTrackerApi.Repositories;
+using PortfolioTrackerApi.Service_Interfaces;
 
 namespace PortfolioTrackerApi.Services
 {
@@ -38,7 +39,8 @@ namespace PortfolioTrackerApi.Services
         {
             var portfoliosWithStocks = await portfolioRepository.GetUserPortfoliosWithStocksAsync(userId);
             var allCachedPrices = await redisService.GetStockPricesAsync();
-
+            if (allCachedPrices == null || allCachedPrices.Count==0)
+                allCachedPrices = await stocksRepository.GetAllStocksAsync();
             var portfolioDtos = portfoliosWithStocks
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)

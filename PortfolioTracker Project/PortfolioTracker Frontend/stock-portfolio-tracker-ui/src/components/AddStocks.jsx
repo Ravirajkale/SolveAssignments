@@ -66,7 +66,7 @@ function AddStocks () {
             console.error("Error fetching stock from backend:", error);
         }
     };
-    const debouncedSearch = debounce(handleSearchBackend, 200);
+    const debouncedSearch = debounce(handleSearchBackend, 500);
     const handleQuantityChange = (e) => {
         const value = e.target.value;
         const numValue = Number(value);

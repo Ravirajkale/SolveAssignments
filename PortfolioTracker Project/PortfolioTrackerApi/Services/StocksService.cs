@@ -1,6 +1,9 @@
-﻿using PortfolioTrackerApi.DTOS;
+﻿using PortfolioTrackerApi.Controllers;
+using PortfolioTrackerApi.DTOS;
 using PortfolioTrackerApi.Entities;
 using PortfolioTrackerApi.Repositories;
+using PortfolioTrackerApi.Service_Interfaces;
+using PortfolioTrackerApi.Services.StockPriceApi;
 using System.Text.Json;
 
 namespace PortfolioTrackerApi.Services
@@ -13,14 +16,16 @@ namespace PortfolioTrackerApi.Services
         private readonly IStocksRepository _stockRepository;
         private readonly IPortfolioRepository _portfolioRepository;
         private readonly IRedisService _redisService;
+        private readonly StockPriceApiManager _apiManager;
 
-        public StocksService(HttpClient httpClient, IConfiguration configuration, IStocksRepository stockRepository, IPortfolioRepository portfolioRepository, IRedisService redisService)
+        public StocksService(HttpClient httpClient, IConfiguration configuration, IStocksRepository stockRepository, IPortfolioRepository portfolioRepository, IRedisService redisService,StockPriceApiManager apiManager)
         {
             _httpClient = httpClient;
             _configuration = configuration;
             _stockRepository = stockRepository;
             _portfolioRepository = portfolioRepository;
             _redisService = redisService;
+            _apiManager = apiManager;
         }
 
         public async Task<List<StockPrice>> GetAvailableStocksAsync()
@@ -43,7 +48,6 @@ namespace PortfolioTrackerApi.Services
             var lockAcquired = await _redisService.GetValueAsync(lockKey);
             if (!string.IsNullOrEmpty(lockAcquired))
             {
-                // Wait and retry fetching from cache
                 await Task.Delay(500);
                 cachedStocks = await _redisService.GetStockPricesAsync();
                 stock = cachedStocks.FirstOrDefault(s => s.Ticker == ticker);
@@ -51,16 +55,21 @@ namespace PortfolioTrackerApi.Services
             }
 
             await _redisService.SetValueAsync(lockKey, "locked", TimeSpan.FromSeconds(10));
+
             stock = await _stockRepository.GetStockBySymbolAsync(ticker);
             if (stock == null)
             {
-                stock = await FetchStockFromAPI(ticker);
+                stock = await _apiManager.GetStockPriceWithFallbackAsync(ticker);
                 if (stock == null) return null;
+
+                await _stockRepository.AddStockAsync(stock);
+                await _stockRepository.SaveChangesAsync();
             }
 
             cachedStocks.Add(stock);
             await _redisService.SetStockPricesAsync(cachedStocks);
-            await _redisService.SetValueAsync(lockKey, "", TimeSpan.FromSeconds(1)); // Release lock
+            await _redisService.SetValueAsync(lockKey, "", TimeSpan.FromSeconds(1));
+
             return stock;
         }
 
@@ -91,45 +100,7 @@ namespace PortfolioTrackerApi.Services
             return portfolioStocks;
         }
 
-        public async Task<StockPrice> FetchStockFromAPI(string ticker)
-        {
-            string apiKey = _configuration["AlphaVantage:ApiKey"];
-            string url = $"https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={ticker}.BSE&apikey={apiKey}";
-
-            var response = await _httpClient.GetStringAsync(url);
-            Console.WriteLine(response);
-            var json = JsonDocument.Parse(response);
-            var root = json.RootElement;
-
-            if (!root.TryGetProperty("Global Quote", out var stockData) || stockData.GetRawText() == "{}")
-            {
-                Console.WriteLine($"Stock data for ticker {ticker} not found.");
-                return null;
-            }
-
-            if (!stockData.TryGetProperty("05. price", out var priceProperty) || string.IsNullOrWhiteSpace(priceProperty.GetString()))
-            {
-                Console.WriteLine($"Price data for ticker {ticker} not available.");
-                return null;
-            }
-
-            var stock = new StockPrice
-            {
-                Ticker = ticker,
-                Company = ticker,
-                CurrentPrice = decimal.Parse(stockData.GetProperty("05. price").GetString()),
-                LastUpdated = DateTime.UtcNow
-            };
-
-            await _stockRepository.AddStockAsync(stock);
-            await _stockRepository.SaveChangesAsync();
-
-            var cachedStocks = await _redisService.GetStockPricesAsync();
-            cachedStocks.Add(stock);
-            await _redisService.SetStockPricesAsync(cachedStocks);
-
-            return stock;
-        }
+        
 
         internal async Task AddStockToPortfolioAsync(StockAddDto stockDto)
         {
@@ -149,5 +120,39 @@ namespace PortfolioTrackerApi.Services
             await _stockRepository.AddPortfolioStockAsync(stock);
         }
 
+        internal async Task SaveStockToPortfolioAsync(List<ScrapperDto> stockDtos)
+        {
+            List<StockPrice> stocks = new List<StockPrice>();
+            foreach (var stockDto in stockDtos) {
+                var stock = await _stockRepository.GetStockBySymbolAsync(stockDto.ticker);
+                if (stock == null)
+                {
+                    var newStock = new StockPrice
+                    {
+                        CurrentPrice = Convert.ToDecimal(stockDto.last_price.Replace(",", "")),
+                        
+                        Company = stockDto.ticker,
+                        Ticker = stockDto.ticker,
+                        LastUpdated = DateTime.UtcNow
+                    };
+                    if (stockDto.currency == "USD")
+                        newStock.CurrentPrice = Math.Round(newStock.CurrentPrice / 0.012m, 2);
+                    await _stockRepository.AddStockAsync(newStock);
+                    stocks.Add(newStock);
+                }
+                else
+                {
+                    stock.CurrentPrice = Convert.ToDecimal(stockDto.last_price.Replace(",", ""));
+                
+                     
+                    stock.LastUpdated = DateTime.UtcNow;
+                    await _stockRepository.UpdateAsync(stock);
+                    stocks.Add(stock);
+                }
+                await _stockRepository.SaveChangesAsync();
+
+            }
+           await _redisService.SetStockPricesAsync(stocks);
+        }
     }
 }

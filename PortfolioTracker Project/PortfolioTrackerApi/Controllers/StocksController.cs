@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PortfolioTrackerApi.DTOS;
+using PortfolioTrackerApi.Entities;
 using PortfolioTrackerApi.Repositories;
+using PortfolioTrackerApi.Service_Interfaces;
 using PortfolioTrackerApi.Services;
 
 namespace PortfolioTrackerApi.Controllers
@@ -55,7 +57,7 @@ namespace PortfolioTrackerApi.Controllers
                 result.Add(new StockPriceDto
                 {
                     Ticker = stock.Ticker,
-                    Company = stock.Name,
+                    Company = stock.Company,
                     CurrentPrice = priceInfo?.CurrentPrice ?? 0,
                     LastUpdated = priceInfo?.LastUpdated ?? DateTime.UtcNow
                 });
@@ -94,8 +96,25 @@ namespace PortfolioTrackerApi.Controllers
             }
         }
 
-        
-    }
 
+        [HttpPost("save")]
+        public async Task<IActionResult> AddStock([FromBody] List<ScrapperDto> stockDtos)
+        {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            try
+            {
+               
+                    // Add each stock to the portfolio
+                    await _stockService.SaveStockToPortfolioAsync(stockDtos);
+                
+                return Ok(new { message = "Stock(s) added successfully!" });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+    }
 
 }

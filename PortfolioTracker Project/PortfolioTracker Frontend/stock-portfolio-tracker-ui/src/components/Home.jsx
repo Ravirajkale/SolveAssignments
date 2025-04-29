@@ -12,7 +12,7 @@ function Home() {
     const [pageSize] = useState(10); // Display 10 portfolios per page
     const [totalCount, setTotalCount] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const { token } = useAuth();
+    const { token,logout } = useAuth();
 
     useEffect(() => {
         const fetchPortfolios = async () => {
@@ -72,7 +72,12 @@ function Home() {
 
     return (
         <div className="home-container">
-            <h2>My Portfolios</h2>
+             <div className="home-header">
+                <h2>My Portfolios</h2>
+                <button className="logoutButton" onClick={logout}>
+                    Logout
+                </button>
+            </div>
             <button className = "createPortfolioButton" onClick={handleAddPortfolioClick}>Create Portfolio</button>
             <button className="statisticsButton">
                 <Link to="/statistics" style={{ textDecoration: 'none', color: 'inherit' }}>

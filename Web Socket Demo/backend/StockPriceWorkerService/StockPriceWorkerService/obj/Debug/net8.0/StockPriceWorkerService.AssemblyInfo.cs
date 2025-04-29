@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StockPriceWorkerService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2845a130df587b88d0081712af1517780eda1704")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed93b2552ea5393e119d606a23c4e5b506c9bcb3")]
 [assembly: System.Reflection.AssemblyProductAttribute("StockPriceWorkerService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StockPriceWorkerService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,6 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using PortfolioTrackerApi.DTOS;
 using PortfolioTrackerApi.Entities;
 using PortfolioTrackerApi.Repositories;
+using PortfolioTrackerApi.Service_Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
